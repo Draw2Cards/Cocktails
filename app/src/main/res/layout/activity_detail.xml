@@ -16,6 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:name="com.example.cocktails.JoggingDetailFragment"
-        tools:layout="@layout/fragment_cocktail_detail" />
+        tools:layout="@layout/fragment_jogging_detail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

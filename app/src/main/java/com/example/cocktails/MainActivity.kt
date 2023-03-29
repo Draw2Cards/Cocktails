@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
 //    }
 
     override fun itemClicked(id: Long) {
-
-        val fragmentContainer : View = findViewById(R.id.fragment_container)
+        val fragmentContainer = findViewById<View>(R.id.fragment_container)
         if (fragmentContainer != null) {
             val details : JoggingDetailFragment = JoggingDetailFragment()
             val ft : FragmentTransaction = supportFragmentManager.beginTransaction()
