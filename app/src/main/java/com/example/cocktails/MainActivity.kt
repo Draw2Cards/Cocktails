@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
 
         val fragmentContainer : View = findViewById(R.id.fragment_container)
         if (fragmentContainer != null) {
-            val details : CocktailDetailFragment = CocktailDetailFragment()
+            val details : JoggingDetailFragment = JoggingDetailFragment()
             val ft : FragmentTransaction = supportFragmentManager.beginTransaction()
             details.setCocktail(id)
             ft.replace(R.id.fragment_container, details)
