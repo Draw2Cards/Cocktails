@@ -1,5 +1,6 @@
 package com.example.cocktails
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.widget.TextView
 
@@ -21,4 +22,18 @@ class CocktailDetailFragment : Fragment(R.layout.fragment_cocktail_detail) {
             desc.text = cocktail.getRecipte()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putLong("cocktailId", cocktailId)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if(savedInstanceState != null) {
+            cocktailId = savedInstanceState.getLong("cocktailId")
+        }
+    }
+
+
 }
