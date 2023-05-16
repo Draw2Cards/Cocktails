@@ -8,12 +8,9 @@
     android:orientation="horizontal"
     >
 
-<!--   <Button-->
-<!--      android:layout_height="wrap_content"-->
-<!--      android:layout_width="wrap_content"-->
-<!--      android:onClick="onShowDetail"-->
-<!--      android:text="@string/detail_button"-->
-<!--      tools:ignore="MissingConstraints" />-->
+   <include
+       layout="@layout/toolbar_main"
+       android:id="@+id/toolbar" />
 
    <androidx.fragment.app.FragmentContainerView
        android:id="@+id/list_frag"
