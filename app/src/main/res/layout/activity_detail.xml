@@ -26,4 +26,5 @@
         android:name="com.example.cocktails.JoggingDetailFragment"
         tools:layout="@layout/fragment_jogging_detail" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
