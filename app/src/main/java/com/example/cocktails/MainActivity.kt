@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewPager: ViewPager2 = findViewById(R.id.viewPager)
+        val viewPager: ViewPager2 = findViewById(R.id.pager)
         viewPager.adapter = SectionsPagerAdapter(this)
         val tabLayout: TabLayout = findViewById(R.id.tabs)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
