@@ -27,4 +27,8 @@
     <string name="home_tab">Start</string>
     <string name="kat1_tab">Kategoria 1</string>
     <string name="kat2_tab">Kategoria 2</string>
+
+    <string name="top_header">Jakiś nagłówek</string>
+    <string name="top_image">liit.jpg</string>
+    <string name="top_text">Jakieś kilkuzdaniowe bla bla bla.</string>
 </resources>

@@ -23,9 +23,8 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val pagerAdapter = SectionsPagerAdapter(this)
-        val viewPager: ViewPager2 = findViewById(R.id.pager)
-        viewPager.adapter = pagerAdapter
+        val viewPager: ViewPager2 = findViewById(R.id.viewPager)
+        viewPager.adapter = SectionsPagerAdapter(this)
         val tabLayout: TabLayout = findViewById(R.id.tabs)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
@@ -35,7 +34,6 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
             }
         }.attach()
 
-        //val toolbar: Toolbar? = findViewById(R.id.toolbar) as? Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
     }
