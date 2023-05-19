@@ -1,5 +1,6 @@
 package com.example.cocktails
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
@@ -14,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.OnClickListener {
     private var joggingId: Long = -1
 
-    fun setCocktail(id: Long) {
+    fun setCocktail(id: Int) {
         joggingId = id.toLong()
     }
 
@@ -23,7 +24,7 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
         if (view != null) {
             var title: TextView = requireView().findViewById(R.id.textTitle)
             var cocktails = Cocktails()
-            var cocktail: Cocktail = cocktails.get(joggingId)
+            var cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
             title.text = cocktail.getName()
             var desc: TextView = requireView().findViewById(R.id.textDescription)
             desc.text = cocktail.getRecipte()
@@ -53,13 +54,14 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
 
     override fun onClick(v: View?) {
         var cocktails = Cocktails()
-        var cocktail: Cocktail = cocktails.get(joggingId)
+        var cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
         when (v?.id)
         {
             R.id.fab -> shareRecipe(cocktail.getName(),cocktail.getRecipte())
         }
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private fun shareRecipe(title: String, recipe: String) {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"

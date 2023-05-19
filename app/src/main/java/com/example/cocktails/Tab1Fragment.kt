@@ -8,6 +8,10 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.ListFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.cocktails.CaptionedImagesAdapter
+import com.example.cocktails.Cocktails
 import com.example.cocktails.R
 
 class Tab1Fragment : Fragment() {
@@ -27,5 +31,7 @@ class Tab1Fragment : Fragment() {
 
         return view
     }
+
+
 }
 

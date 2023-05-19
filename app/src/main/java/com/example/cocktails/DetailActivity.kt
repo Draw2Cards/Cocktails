@@ -11,7 +11,7 @@ class DetailActivity : AppCompatActivity() {
         val frag: JoggingDetailFragment =
             supportFragmentManager.findFragmentById (R.id.detail_frag) as JoggingDetailFragment;
         var cocktailId = intent.getLongExtra(EXTRA_COCKTAIL_ID, -1);
-        frag.setCocktail(cocktailId);
+        frag.setCocktail(cocktailId.toInt());
     }
 
     companion object {

@@ -9,9 +9,9 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
+import androidx.cardview.widget.CardView
 import androidx.core.view.MenuItemCompat
 import androidx.fragment.app.FragmentTransaction
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -74,19 +74,18 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
 //        startActivity(intent)
 //    }
 
-    override fun itemClicked(id: Long) {
+    override fun itemClicked(id: Int) {
         val fragmentContainer = findViewById<View>(R.id.fragment_container)
         if (fragmentContainer != null) {
-            val details : JoggingDetailFragment = JoggingDetailFragment()
-            val ft : FragmentTransaction = supportFragmentManager.beginTransaction()
+            val details: JoggingDetailFragment = JoggingDetailFragment()
+            val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
             details.setCocktail(id)
-            ft.replace(R.id.fragment_container, details)
+            ft.replace(R.id.fragment_container, details) // Use replace() instead of add()
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             ft.addToBackStack(null)
             ft.commit()
-        }
-        else {
-            val intent = Intent(this, DetailActivity::class.java);
+        } else {
+            val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra(DetailActivity.EXTRA_COCKTAIL_ID, id)
             startActivity(intent)
         }
