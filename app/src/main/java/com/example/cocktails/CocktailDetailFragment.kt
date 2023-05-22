@@ -6,7 +6,6 @@ import android.widget.TextView
 
 class CocktailDetailFragment : Fragment(R.layout.fragment_cocktail_detail) {
     private var cocktailId: Long = -1
-
     override fun onStart() {
         super.onStart()
         if (view != null) {

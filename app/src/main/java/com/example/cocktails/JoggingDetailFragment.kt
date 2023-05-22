@@ -68,17 +68,14 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, title)
         shareIntent.putExtra(Intent.EXTRA_TEXT, recipe)
 
-        // Check if there is an email app available to handle the share intent
         val packageManager: PackageManager = requireActivity().packageManager
         val activities: List<ResolveInfo> = packageManager.queryIntentActivities(shareIntent, 0)
         val isEmailAppAvailable = activities.any { it.activityInfo.packageName.contains("com.google.android.gm") }
 
         if (isEmailAppAvailable) {
-            // Share the recipe using the email app
             shareIntent.setPackage("com.google.android.gm") // Set the package name of Gmail
             startActivity(shareIntent)
         } else {
-            // If email app is not available, show a toast or handle the case as per your requirement
             Toast.makeText(requireContext(), "Email app not found", Toast.LENGTH_SHORT).show()
         }
     }

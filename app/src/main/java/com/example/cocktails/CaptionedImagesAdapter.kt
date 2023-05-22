@@ -48,6 +48,4 @@ class CaptionedImagesAdapter(private val cocktails: List<Cocktail>) :
         }
     }
 
-
-    // Other methods and code for the adapter
 }

@@ -21,7 +21,6 @@ class CocktailDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cocktail_detail)
 
-        // Set the toolbar as the activity's app bar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
@@ -29,7 +28,6 @@ class CocktailDetailActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        // Display cocktail information
         val cocktailId = intent?.extras?.getInt(EXTRA_COCKTAIL_ID, -1)
         if (cocktailId != null && cocktailId != -1) {
             val cocktails: List<Cocktail> = if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true) {
@@ -52,7 +50,6 @@ class CocktailDetailActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener {
-            // Open Gmail with predefined subject and body
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:")
 
@@ -74,10 +71,7 @@ class CocktailDetailActivity : AppCompatActivity() {
         }
     }
 
-
-
     override fun onSupportNavigateUp(): Boolean {
-        // Handle the back button click on the toolbar
         finish()
         return true
     }

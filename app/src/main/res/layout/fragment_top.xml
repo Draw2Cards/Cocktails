@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<androidx.fragment.app.FragmentContainerView-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:id="@+id/detail_frag"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="0dp"-->
-<!--    android:name="com.example.cocktails.CocktailListFragment" />-->
 <androidx.recyclerview.widget.RecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cocktailRecycler"

@@ -1,10 +1,7 @@
 package com.example.cocktails
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-
-
 class ActionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -12,9 +9,5 @@ class ActionActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-//        val actionBar: ActionBar? = supportActionBar
-//        actionBar?.setDisplayHomeAsUpEnabled(true)
-//        actionBar?.setDisplayShowHomeEnabled(true)
     }
 }
