@@ -1,5 +1,6 @@
 package com.example.cocktails
 
+import Cocktails
 import android.R
 import android.content.Context
 import android.os.Bundle
@@ -19,7 +20,7 @@ class CocktailListFragment : ListFragment() {
 
         var list: ArrayList<Cocktail> = arrayListOf()
 
-        var cocktails = Cocktails()
+        var cocktails = Cocktails(requireContext())
         cocktails.getCocktailList().forEach {
             list.add(it)
         }

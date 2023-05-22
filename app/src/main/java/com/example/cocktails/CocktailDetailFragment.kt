@@ -1,5 +1,6 @@
 package com.example.cocktails
 
+import Cocktails
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.widget.TextView
@@ -15,11 +16,11 @@ class CocktailDetailFragment : Fragment(R.layout.fragment_cocktail_detail) {
         super.onStart()
         if (view != null) {
             var title: TextView = requireView().findViewById(R.id.textTitle)
-            var cocktails = Cocktails()
+            var cocktails = Cocktails(requireContext())
             var cocktail: Cocktail = cocktails.getCocktailById(cocktailId.toInt())
             title.text = cocktail.getName()
             var desc: TextView = requireView().findViewById(R.id.textDescription)
-            desc.text = cocktail.getRecipte()
+            desc.text = cocktail.getRecipe()
         }
     }
 

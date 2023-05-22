@@ -1,4 +1,5 @@
 package com.example.cocktails
+import Cocktails
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class TopFragment : Fragment() {
+class CocktailsFragment : Fragment() {
 
 //    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        return inflater.inflate(R.layout.fragment_top, container, false)
@@ -23,7 +23,7 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
     val layoutManager = GridLayoutManager(activity, 2)
     cocktailRecycler.layoutManager = layoutManager
 
-    val cocktails = Cocktails()
+    val cocktails = Cocktails(requireContext())
     val adapter = CaptionedImagesAdapter(cocktails.getCocktailList())
     cocktailRecycler.adapter = adapter
 
@@ -31,6 +31,7 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
         override fun onClick(position: Int) {
             val intent = Intent(activity, CocktailDetailActivity::class.java)
             intent.putExtra(CocktailDetailActivity.EXTRA_COCKTAIL_ID, position)
+            intent.putExtra(CocktailDetailActivity.EXTRA_COCKTAIL, true)
             activity?.startActivity(intent)
         }
     })

@@ -1,19 +1,16 @@
 package com.example.cocktails
 
-class Cocktail {
-    private var name: String = ""
-    private var recipte: String = ""
-    private var img: Int = -1
+class Cocktail(
+    private val name: String,
+    private val recipe: String,
+    private val img: Int,
+) {
 
-    constructor(name: String, recipte: String, img: Int) {
-        this.name = name
-        this.recipte = recipte
-        this.img = img
-    }
+    fun getName(): String = name
 
-    fun getName(): String {return name}
-    fun getRecipte(): String {return recipte}
+    fun getRecipe(): String = recipe
 
-    fun getImg(): Int {return img}
-    override fun toString(): String {return name}
+    fun getImg(): Int = img
+
+    override fun toString(): String = name
 }

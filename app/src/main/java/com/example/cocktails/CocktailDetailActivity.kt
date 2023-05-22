@@ -1,5 +1,6 @@
 package com.example.cocktails
 
+import Cocktails
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class CocktailDetailActivity : AppCompatActivity() {
 
     companion object {
+        const val EXTRA_COCKTAIL = "cocktail"
         const val EXTRA_COCKTAIL_ID = "cocktailId"
     }
 
@@ -23,14 +25,25 @@ class CocktailDetailActivity : AppCompatActivity() {
         // Set the toolbar as the activity's app bar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         // Display cocktail information
         val cocktailId = intent?.extras?.getInt(EXTRA_COCKTAIL_ID, -1)
         if (cocktailId != null && cocktailId != -1) {
-            val cocktails = Cocktails().getCocktailList()
+            var cocktails: List<Cocktail>
+            if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true)
+            {
+                cocktails = Cocktails(this).getCocktailList()
+            }
+            else
+            {
+                cocktails = Cocktails(this).getMocktailList()
+            }
             val cocktailName = cocktails[cocktailId].getName()
-            val cocktailRecipe = cocktails[cocktailId].getRecipte()
+            val cocktailRecipe = cocktails[cocktailId].getRecipe()
             val textView: TextView = findViewById(R.id.cocktail_text)
             textView.text = cocktailRecipe
 
@@ -49,9 +62,17 @@ class CocktailDetailActivity : AppCompatActivity() {
                 data = Uri.parse("mailto:")
 
                 if (cocktailId != null && cocktailId != -1) {
-                    val cocktails = Cocktails().getCocktailList()
+                    var cocktails: List<Cocktail>
+                    if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true)
+                    {
+                        cocktails = Cocktails(this@CocktailDetailActivity).getCocktailList()
+                    }
+                    else
+                    {
+                        cocktails = Cocktails(this@CocktailDetailActivity).getMocktailList()
+                    }
                     val cocktailName = cocktails[cocktailId].getName()
-                    val cocktailRecipe = cocktails[cocktailId].getRecipte()
+                    val cocktailRecipe = cocktails[cocktailId].getRecipe()
 
                     putExtra(Intent.EXTRA_SUBJECT, cocktailName)
                     putExtra(Intent.EXTRA_TEXT, cocktailRecipe)

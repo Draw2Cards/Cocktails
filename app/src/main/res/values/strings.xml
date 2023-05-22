@@ -24,8 +24,62 @@
         <item>Kat. 2 Pozycja 3 </item>
     </string-array>
 
-    <string name="home_tab">Start</string>
-    <string name="kat1_tab">Kategoria 1</string>
-    <string name="kat2_tab">Kategoria 2</string>
-    <string name="top_image">liit</string>
+    <string name="home_tab">Home</string>
+    <string name="kat1_tab">Cocktails</string>
+    <string name="kat2_tab">Mocktails</string>
+    <string name="top_image">home</string>
+    <string name="app_title">Welcome to Cocktail Master!</string>
+    <string name="app_purpose">Discover the art of mixology with our extensive collection of cocktail and mocktail recipes. Whether you\'re a seasoned bartender or a curious enthusiast, this app has everything you need to shake, stir, and sip your way to cocktail bliss. \n\nExplore our handpicked selection of classic concoctions and trendy libations. From the timeless elegance of a Martini to the tropical delights of a Piña Colada, we\'ve got you covered.  \n\nShare your favorite recipes with friends and spread the joy of mixology. Because great cocktails are meant to be enjoyed together.  \n\nAnd here\'s a little secret: Cocktail Master was created by a group of passionate students on a mission to master the art of mobile app development. So, while we strive for excellence, we also believe in having a lot of fun along the way.</string>
+    <string name="app_cheers">Cheers, mate!</string>
+    <!-- strings.xml -->
+
+    <string name="bloody_mary_recipe_title">Bloody Mary</string>
+    <string name="bloody_mary_recipe">
+    Ingredients:\n
+    • 2 ounces (60 ml) vodka\n
+    • 4 ounces (120 ml) tomato juice\n
+    • 1/2 ounce (15 ml) freshly squeezed lemon juice\n
+    • 2-3 dashes Worcestershire sauce\n
+    • 2-3 dashes hot sauce (e.g., Tabasco)\n
+    • Pinch of salt and black pepper\n
+    • Celery salt, for rimming the glass (optional)\n\n
+    Instructions:\n
+    1. Rim a highball or rocks glass with celery salt (optional). Fill the glass with ice cubes and set aside.\n
+    2. In a cocktail shaker, combine vodka, tomato juice, lemon juice, Worcestershire sauce, hot sauce, salt, and pepper. Add more hot sauce if you prefer a spicier drink.\n
+    3. Shake the mixture well to combine all the ingredients.\n
+    4. Strain the cocktail into the prepared glass over the ice.\n
+    5. Garnish with a celery stalk, lemon wedge, and/or olives. You can also add other garnishes like pickles or bacon for additional flavor.\n
+    6. Stir gently with a cocktail stirrer or celery stalk to mix the flavors.\n
+    7. Serve and enjoy your refreshing Bloody Mary!\n
+</string>
+
+
+
+    <string name="long_island_iced_tea_recipe_title">Long Island Iced Tea</string>
+    <string name="long_island_iced_tea_recipe">
+    Ingredients:\n
+    • 1/2 ounce (15 ml) vodka\n
+    • 1/2 ounce (15 ml) rum\n
+    • 1/2 ounce (15 ml) gin\n
+    • 1/2 ounce (15 ml) tequila\n
+    • 1/2 ounce (15 ml) triple sec\n
+    • 1 ounce (30 ml) freshly squeezed lemon juice\n
+    • 1 tablespoon (15 ml) simple syrup\n
+    • 4 ounces (120 ml) cola\n
+    • Lemon wedges, for garnish\n\n
+    Instructions:\n
+    1. Fill a cocktail shaker with ice cubes.\n
+    2. Add vodka, rum, gin, tequila, triple sec, lemon juice, and simple syrup to the shaker.\n
+    3. Shake the mixture vigorously for about 15 seconds to chill and mix the ingredients.\n
+    4. Strain the cocktail into a highball glass filled with ice.\n
+    5. Top the glass with cola and gently stir to combine.\n
+    6. Garnish with lemon wedges.\n
+    7. Serve and enjoy your refreshing Long Island Iced Tea!\n
+</string>
+    <string name="virgin_mojito_title">Virgin Mojito</string>
+    <string name="virgin_mojito_recipe">- 6-8 fresh mint leaves\n- 1 lime\n- 2 tablespoons white sugar\n- 1 cup club soda\n- Crushed ice\n\n1. In a glass, muddle the mint leaves with the juice of half a lime and sugar.\n\n2. Fill the glass with crushed ice.\n\n3. Add club soda and stir well.\n\n4. Garnish with a sprig of mint and a slice of lime.\n\n5. Enjoy your refreshing Virgin Mojito!</string>
+    <string name="cocktail_virgin_pina_colada_title">Virgin Pina Colada</string>
+    <string name="cocktail_virgin_pina_colada_recipe">Ingredients:\n- 2 cups pineapple chunks\n- 1 cup coconut milk\n- 1 cup ice\n\nInstructions:\n1. Blend all ingredients together until smooth.\n2. Pour into a glass and garnish with a pineapple slice and cherry.\n3. Serve chilled.</string>
+
+
 </resources>

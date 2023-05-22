@@ -13,12 +13,15 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.MenuItemCompat
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import java.lang.Math.abs
 
 class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
 
     private var shareActionProvider: ShareActionProvider? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,7 +36,6 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
                 2 -> tab.text = resources.getText(R.string.kat2_tab)
             }
         }.attach()
-
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
     }
@@ -47,15 +49,6 @@ class MainActivity : AppCompatActivity(), CocktailListFragment.Listener  {
         shareActionProvider?.setShareIntent(shareIntent)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-
-        val menuItem: MenuItem? = menu.findItem(R.id.action_share)
-        shareActionProvider = menuItem?.let { MenuItemCompat.getActionProvider(it) } as? ShareActionProvider
-        setShareActionIntent("Blablablablablla")
-
-        return super.onCreateOptionsMenu(menu)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
