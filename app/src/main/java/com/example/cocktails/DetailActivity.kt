@@ -9,12 +9,12 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val frag: JoggingDetailFragment =
-            supportFragmentManager.findFragmentById (R.id.detail_frag) as JoggingDetailFragment;
-        var cocktailId = intent.getLongExtra(EXTRA_COCKTAIL_ID, -1);
-        frag.setCocktail(cocktailId.toInt());
+            supportFragmentManager.findFragmentById (R.id.detail_frag) as JoggingDetailFragment
+        val cocktailId = intent.getLongExtra(EXTRA_COCKTAIL_ID, -1)
+        frag.setCocktail(cocktailId.toInt())
     }
 
     companion object {
-        val EXTRA_COCKTAIL_ID: String = "id"
+        const val EXTRA_COCKTAIL_ID: String = "id"
     }
 }

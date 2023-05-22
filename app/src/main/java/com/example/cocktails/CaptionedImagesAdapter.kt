@@ -1,6 +1,5 @@
 package com.example.cocktails
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -32,7 +31,7 @@ class CaptionedImagesAdapter(private val cocktails: List<Cocktail>) :
     }
 
     override fun getItemCount(): Int {
-        return cocktails.size;
+        return cocktails.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

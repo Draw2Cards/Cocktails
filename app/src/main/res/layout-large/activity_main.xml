@@ -27,7 +27,8 @@
        android:layout_height="match_parent"
        app:layout_constraintStart_toEndOf="@+id/list_frag"
        tools:layout="@layout/fragment_cocktail_detail"
-       android:layout_width="0dp"/>
+       android:layout_width="0dp"
+       tools:ignore="InconsistentLayout" />
 
 
 </LinearLayout>

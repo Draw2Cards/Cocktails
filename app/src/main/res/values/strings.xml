@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Cocktails</string>
-    <string name="detail_button">Pokaż przepis</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="detail_button">Show recipe</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="cocktail_name">Nazwa drinka</string>
-    <string name="cocktail_recipe">Składniki i sposób przygotowania</string>
+    <string name="cocktail_name">Cocktail\'s name</string>
+    <string name="cocktail_recipe">Ingredients and instructions</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="reset">RESET</string>
@@ -12,17 +11,6 @@
     <string name="action_title">Action_Activity</string>
     <string name="action_share">Share</string>
     <string name="title_top">Title Top</string>
-
-    <string-array name="kategoria1">
-        <item>Pozycja 1 Kat. 1</item>
-        <item>Pozycja 2 Kat. 1 </item>
-        <item>Pozycja 3 Kat. 1 </item>
-    </string-array>
-    <string-array name="kategoria2">
-        <item>Kat. 2 Pozycja 1</item>
-        <item>Kat. 2 Pozycja 2</item>
-        <item>Kat. 2 Pozycja 3 </item>
-    </string-array>
 
     <string name="home_tab">Home</string>
     <string name="kat1_tab">Cocktails</string>
@@ -77,9 +65,11 @@
     7. Serve and enjoy your refreshing Long Island Iced Tea!\n
 </string>
     <string name="virgin_mojito_title">Virgin Mojito</string>
-    <string name="virgin_mojito_recipe">- 6-8 fresh mint leaves\n- 1 lime\n- 2 tablespoons white sugar\n- 1 cup club soda\n- Crushed ice\n\n1. In a glass, muddle the mint leaves with the juice of half a lime and sugar.\n\n2. Fill the glass with crushed ice.\n\n3. Add club soda and stir well.\n\n4. Garnish with a sprig of mint and a slice of lime.\n\n5. Enjoy your refreshing Virgin Mojito!</string>
+    <string name="virgin_mojito_recipe">– 6–8 fresh mint leaves\n– 1 lime\n- 2 tablespoons white sugar\n- 1 cup club soda\n- Crushed ice\n\n1. In a glass, muddle the mint leaves with the juice of half a lime and sugar.\n\n2. Fill the glass with crushed ice.\n\n3. Add club soda and stir well.\n\n4. Garnish with a sprig of mint and a slice of lime.\n\n5. Enjoy your refreshing Virgin Mojito!</string>
     <string name="cocktail_virgin_pina_colada_title">Virgin Pina Colada</string>
     <string name="cocktail_virgin_pina_colada_recipe">Ingredients:\n- 2 cups pineapple chunks\n- 1 cup coconut milk\n- 1 cup ice\n\nInstructions:\n1. Blend all ingredients together until smooth.\n2. Pour into a glass and garnish with a pineapple slice and cherry.\n3. Serve chilled.</string>
+    <string name="image">Image</string>
+    <string name="share">Share</string>
 
 
 </resources>

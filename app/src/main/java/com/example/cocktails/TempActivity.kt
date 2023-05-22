@@ -9,9 +9,9 @@ class TempActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temp)
         if (savedInstanceState == null) {
-            val stoper = StoperFragment()
+            val stopper = StopperFragment()
             val ft = supportFragmentManager.beginTransaction()
-            ft.add(R.id.stoper_container, stoper)
+            ft.add(R.id.stopper_container, stopper)
             ft.addToBackStack(null)
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             ft.commit()

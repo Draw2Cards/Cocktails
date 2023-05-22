@@ -9,12 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-class StoperFragment : Fragment(), View.OnClickListener {
+class StopperFragment : Fragment(), View.OnClickListener {
     private var seconds: Int = 0
     private var running: Boolean = false
     private  var wasRunning: Boolean = false
@@ -30,7 +25,7 @@ class StoperFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val layout = inflater.inflate(R.layout.fragment_stoper, container, false)
-        runStoper(layout)
+        runStopper(layout)
         val startButton = layout.findViewById<Button>(R.id.start_button)
         startButton.setOnClickListener(this)
         val stopButton = layout.findViewById<Button>(R.id.stop_button)
@@ -40,9 +35,9 @@ class StoperFragment : Fragment(), View.OnClickListener {
         return layout
     }
 
-    private fun runStoper(view: View) {
+    private fun runStopper(view: View) {
         val timeView : TextView = view.findViewById(R.id.time_view)
-        val handler : Handler = Handler()
+        val handler = Handler()
         handler.post( object : Runnable {
             override fun run() {
                 val hours = seconds / 3600

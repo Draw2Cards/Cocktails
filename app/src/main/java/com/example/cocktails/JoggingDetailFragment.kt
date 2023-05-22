@@ -1,6 +1,5 @@
 package com.example.cocktails
 
-import Cocktails
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -23,11 +22,11 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
     override fun onStart() {
         super.onStart()
         if (view != null) {
-            var title: TextView = requireView().findViewById(R.id.textTitle)
-            var cocktails = Cocktails(requireContext())
-            var cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
+            val title: TextView = requireView().findViewById(R.id.textTitle)
+            val cocktails = Cocktails(requireContext())
+            val cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
             title.text = cocktail.getName()
-            var desc: TextView = requireView().findViewById(R.id.textDescription)
+            val desc: TextView = requireView().findViewById(R.id.textDescription)
             desc.text = cocktail.getRecipe()
             val fab: FloatingActionButton = requireView().findViewById(R.id.fab)
             fab.setOnClickListener(this)
@@ -42,9 +41,9 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            val stoper = StoperFragment()
+            val stopper = StopperFragment()
             val ft = childFragmentManager.beginTransaction()
-            ft.add(R.id.stoper_container, stoper)
+            ft.add(R.id.stopper_container, stopper)
             ft.addToBackStack(null)
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             ft.commit()
@@ -54,8 +53,8 @@ class JoggingDetailFragment : Fragment(R.layout.fragment_jogging_detail), View.O
     }
 
     override fun onClick(v: View?) {
-        var cocktails = Cocktails(requireContext())
-        var cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
+        val cocktails = Cocktails(requireContext())
+        val cocktail: Cocktail = cocktails.getCocktailById(joggingId.toInt())
         when (v?.id)
         {
             R.id.fab -> shareRecipe(cocktail.getName(),cocktail.getRecipe())

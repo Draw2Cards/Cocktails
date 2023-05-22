@@ -1,6 +1,5 @@
 package com.example.cocktails
 
-import Cocktails
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -33,14 +32,10 @@ class CocktailDetailActivity : AppCompatActivity() {
         // Display cocktail information
         val cocktailId = intent?.extras?.getInt(EXTRA_COCKTAIL_ID, -1)
         if (cocktailId != null && cocktailId != -1) {
-            var cocktails: List<Cocktail>
-            if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true)
-            {
-                cocktails = Cocktails(this).getCocktailList()
-            }
-            else
-            {
-                cocktails = Cocktails(this).getMocktailList()
+            val cocktails: List<Cocktail> = if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true) {
+                Cocktails(this).getCocktailList()
+            } else {
+                Cocktails(this).getMocktailList()
             }
             val cocktailName = cocktails[cocktailId].getName()
             val cocktailRecipe = cocktails[cocktailId].getRecipe()
@@ -62,14 +57,11 @@ class CocktailDetailActivity : AppCompatActivity() {
                 data = Uri.parse("mailto:")
 
                 if (cocktailId != null && cocktailId != -1) {
-                    var cocktails: List<Cocktail>
-                    if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true)
-                    {
-                        cocktails = Cocktails(this@CocktailDetailActivity).getCocktailList()
-                    }
-                    else
-                    {
-                        cocktails = Cocktails(this@CocktailDetailActivity).getMocktailList()
+                    val cocktails: List<Cocktail> =
+                        if (intent?.extras?.getBoolean(EXTRA_COCKTAIL, true) == true) {
+                        Cocktails(this@CocktailDetailActivity).getCocktailList()
+                    } else {
+                        Cocktails(this@CocktailDetailActivity).getMocktailList()
                     }
                     val cocktailName = cocktails[cocktailId].getName()
                     val cocktailRecipe = cocktails[cocktailId].getRecipe()

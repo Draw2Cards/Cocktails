@@ -1,6 +1,6 @@
 package com.example.cocktails
 
-import Cocktails
+//noinspection SuspiciousImport
 import android.R
 import android.content.Context
 import android.os.Bundle
@@ -18,14 +18,14 @@ class CocktailListFragment : ListFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var list: ArrayList<Cocktail> = arrayListOf()
+        val list: ArrayList<Cocktail> = arrayListOf()
 
-        var cocktails = Cocktails(requireContext())
+        val cocktails = Cocktails(requireContext())
         cocktails.getCocktailList().forEach {
             list.add(it)
         }
 
-        var adapter = ArrayAdapter(inflater.context, R.layout.simple_list_item_1, list)
+        val adapter = ArrayAdapter(inflater.context, R.layout.simple_list_item_1, list)
         listAdapter = adapter
 
         return super.onCreateView(inflater, container, savedInstanceState)
@@ -39,9 +39,7 @@ class CocktailListFragment : ListFragment() {
     }
 
     override fun onListItemClick(listView: ListView, itemView: View, position: Int, id: Long) {
-        if (listener != null) {
-            listener.itemClicked(id.toInt())
-        }
+        listener.itemClicked(id.toInt())
     }
 
     interface Listener {

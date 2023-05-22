@@ -1,11 +1,12 @@
-import android.content.Context
-import com.example.cocktails.Cocktail
-import com.example.cocktails.R
+package com.example.cocktails
 
-class Cocktails {
+import android.content.Context
+
+class Cocktails(context: Context) {
     private val cocktailsList = arrayListOf<Cocktail>()
     private val mocktailsList = arrayListOf<Cocktail>()
-    constructor(context: Context) {
+
+    init {
         val resources = context.resources
         cocktailsList.add(
             Cocktail(
@@ -18,10 +19,9 @@ class Cocktails {
             Cocktail(
                 resources.getString(R.string.long_island_iced_tea_recipe_title),
                 resources.getString(R.string.long_island_iced_tea_recipe),
-                R.drawable.liit
+                R.drawable.long_island_ice_tea
             )
         )
-
         mocktailsList.add(
             Cocktail(
                 resources.getString(R.string.virgin_mojito_title),
@@ -36,7 +36,6 @@ class Cocktails {
                 R.drawable.pc,
             )
         )
-
     }
 
     fun getCocktailById(id: Int): Cocktail {
@@ -45,10 +44,6 @@ class Cocktails {
 
     fun getCocktailList(): List<Cocktail> {
         return cocktailsList
-    }
-
-    fun getMocktailById(id: Int): Cocktail {
-        return mocktailsList[id]
     }
 
     fun getMocktailList(): List<Cocktail> {
